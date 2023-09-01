@@ -314,7 +314,7 @@ class thread_transcribe_audio(QThread):
 
     def transcribe_audio(self, filename):
         with open(filename, 'rb') as f:
-            transcript = openai.Audio.transcribe("whisper-1", f)
+            transcript = openai.Audio.transcribe("whisper-1", f, language="ko")
             
         self.text = transcript.text
         self.signal.emit(self.text)
