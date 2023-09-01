@@ -1,0 +1,15 @@
+.env
+main.py
+output.wav
+*.log
+kiosk/__pycache__/
+kiosk/include/
+kiosk/lib/
+kiosk/Scripts/
+kiosk/main_updated.py
+kiosk/main_updated_v2.py
+kiosk/main_with_menu_images.py
+kiosk/pyvenv.cfg
+kiosk/ui2.py
+kiosk/kiosk.py
+
