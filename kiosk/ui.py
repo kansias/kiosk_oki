@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'kioskcXFLjr.ui'
+## Form generated from reading UI file 'kioskhAWNHV.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -46,16 +46,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setSpacing(22)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_4.setContentsMargins(0, -1, 0, 11)
-        self.option_Button = QPushButton(self.top_frame)
-        self.option_Button.setObjectName(u"option_Button")
-        self.option_Button.setMinimumSize(QSize(30, 30))
-        self.option_Button.setMaximumSize(QSize(30, 30))
-        self.option_Button.setStyleSheet(u"QPushButton {\n"
+        self.option_button = QPushButton(self.top_frame)
+        self.option_button.setObjectName(u"option_button")
+        self.option_button.setMinimumSize(QSize(30, 30))
+        self.option_button.setMaximumSize(QSize(30, 30))
+        self.option_button.setStyleSheet(u"QPushButton {\n"
 "background-color: #fafafa;\n"
 "}")
-        self.option_Button.setFlat(True)
+        self.option_button.setFlat(True)
 
-        self.horizontalLayout_4.addWidget(self.option_Button)
+        self.horizontalLayout_4.addWidget(self.option_button)
 
         self.top_label1 = QLabel(self.top_frame)
         self.top_label1.setObjectName(u"top_label1")
@@ -351,13 +351,164 @@ class Ui_MainWindow(object):
 "  background-color: rgb(17, 229, 2);\n"
 "  border: none;\n"
 "  border-radius: 15px;\n"
-"  font-weight : 900;\n"
 "}")
 
         self.horizontalLayout_6.addWidget(self.connect_button)
 
 
         self.verticalLayout_7.addWidget(self.frame_4, 0, Qt.AlignHCenter|Qt.AlignTop)
+
+        self.frame_6 = QFrame(self.frame_5)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setMinimumSize(QSize(700, 300))
+        self.frame_6.setMaximumSize(QSize(700, 500))
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_17 = QVBoxLayout(self.frame_6)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.frame_7 = QFrame(self.frame_6)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setMinimumSize(QSize(0, 50))
+        self.frame_7.setMaximumSize(QSize(16777215, 50))
+        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_10 = QVBoxLayout(self.frame_7)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.label_6 = QLabel(self.frame_7)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setMinimumSize(QSize(100, 50))
+        self.label_6.setMaximumSize(QSize(100, 50))
+        self.label_6.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_10.addWidget(self.label_6, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_17.addWidget(self.frame_7)
+
+        self.frame_8 = QFrame(self.frame_6)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setStyleSheet(u"QPushButton{\n"
+"	color:white;\n"
+"}")
+        self.frame_8.setFrameShape(QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_5 = QHBoxLayout(self.frame_8)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.frame_9 = QFrame(self.frame_8)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setFrameShape(QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_14 = QVBoxLayout(self.frame_9)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.label_7 = QLabel(self.frame_9)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setMinimumSize(QSize(100, 20))
+        self.label_7.setMaximumSize(QSize(100, 20))
+        self.label_7.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_14.addWidget(self.label_7, 0, Qt.AlignHCenter)
+
+        self.frame_12 = QFrame(self.frame_9)
+        self.frame_12.setObjectName(u"frame_12")
+        self.frame_12.setFrameShape(QFrame.StyledPanel)
+        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_11 = QVBoxLayout(self.frame_12)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.LU_button = QPushButton(self.frame_12)
+        self.LU_button.setObjectName(u"LU_button")
+        self.LU_button.setStyleSheet(u"")
+
+        self.verticalLayout_11.addWidget(self.LU_button)
+
+        self.LD_button = QPushButton(self.frame_12)
+        self.LD_button.setObjectName(u"LD_button")
+        self.LD_button.setStyleSheet(u"")
+
+        self.verticalLayout_11.addWidget(self.LD_button)
+
+
+        self.verticalLayout_14.addWidget(self.frame_12)
+
+
+        self.horizontalLayout_5.addWidget(self.frame_9)
+
+        self.frame_10 = QFrame(self.frame_8)
+        self.frame_10.setObjectName(u"frame_10")
+        self.frame_10.setFrameShape(QFrame.StyledPanel)
+        self.frame_10.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_15 = QVBoxLayout(self.frame_10)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.label_8 = QLabel(self.frame_10)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setMinimumSize(QSize(100, 20))
+        self.label_8.setMaximumSize(QSize(100, 20))
+        self.label_8.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_15.addWidget(self.label_8, 0, Qt.AlignHCenter)
+
+        self.frame_13 = QFrame(self.frame_10)
+        self.frame_13.setObjectName(u"frame_13")
+        self.frame_13.setFrameShape(QFrame.StyledPanel)
+        self.frame_13.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_13)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.RU_button = QPushButton(self.frame_13)
+        self.RU_button.setObjectName(u"RU_button")
+
+        self.verticalLayout_12.addWidget(self.RU_button)
+
+        self.RD_button = QPushButton(self.frame_13)
+        self.RD_button.setObjectName(u"RD_button")
+
+        self.verticalLayout_12.addWidget(self.RD_button)
+
+
+        self.verticalLayout_15.addWidget(self.frame_13)
+
+
+        self.horizontalLayout_5.addWidget(self.frame_10)
+
+        self.frame_11 = QFrame(self.frame_8)
+        self.frame_11.setObjectName(u"frame_11")
+        self.frame_11.setFrameShape(QFrame.StyledPanel)
+        self.frame_11.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_16 = QVBoxLayout(self.frame_11)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.label_9 = QLabel(self.frame_11)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setMinimumSize(QSize(100, 20))
+        self.label_9.setMaximumSize(QSize(100, 20))
+        self.label_9.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_16.addWidget(self.label_9, 0, Qt.AlignHCenter)
+
+        self.frame_14 = QFrame(self.frame_11)
+        self.frame_14.setObjectName(u"frame_14")
+        self.frame_14.setFrameShape(QFrame.StyledPanel)
+        self.frame_14.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.frame_14)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.AU_button = QPushButton(self.frame_14)
+        self.AU_button.setObjectName(u"AU_button")
+
+        self.verticalLayout_13.addWidget(self.AU_button)
+
+        self.AD_button = QPushButton(self.frame_14)
+        self.AD_button.setObjectName(u"AD_button")
+
+        self.verticalLayout_13.addWidget(self.AD_button)
+
+
+        self.verticalLayout_16.addWidget(self.frame_14)
+
+
+        self.horizontalLayout_5.addWidget(self.frame_11)
+
+
+        self.verticalLayout_17.addWidget(self.frame_8)
+
+
+        self.verticalLayout_7.addWidget(self.frame_6, 0, Qt.AlignHCenter|Qt.AlignTop)
 
         self.back_button = QPushButton(self.frame_5)
         self.back_button.setObjectName(u"back_button")
@@ -373,7 +524,6 @@ class Ui_MainWindow(object):
 "  background-color: #222222;\n"
 "  border: none;\n"
 "  border-radius: 15px;\n"
-"  font-weight : 900;\n"
 "}")
 
         self.verticalLayout_7.addWidget(self.back_button, 0, Qt.AlignHCenter)
@@ -398,7 +548,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.option_Button.setText("")
+        self.option_button.setText("")
         self.top_label1.setText(QCoreApplication.translate("MainWindow", u"Smart Kiosk", None))
         self.top_label2.setText(QCoreApplication.translate("MainWindow", u"\uc624\ud0a4", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\uba54\ub274", None))
@@ -409,6 +559,16 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\uc8fc\ubb38 \ub0b4\uc5ed", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\uc7a5\uce58", None))
         self.connect_button.setText(QCoreApplication.translate("MainWindow", u"Connect", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"\ubaa8\ud130 \uc870\uc815", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\uc67c\ucabd", None))
+        self.LU_button.setText(QCoreApplication.translate("MainWindow", u"\uc804\uc9c4", None))
+        self.LD_button.setText(QCoreApplication.translate("MainWindow", u"\ud6c4\uc9c4", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"\uc624\ub978\ucabd", None))
+        self.RU_button.setText(QCoreApplication.translate("MainWindow", u"\uc804\uc9c4", None))
+        self.RD_button.setText(QCoreApplication.translate("MainWindow", u"\ud6c4\uc9c4", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"\ubaa8\ub450", None))
+        self.AU_button.setText(QCoreApplication.translate("MainWindow", u"\uc804\uc9c4", None))
+        self.AD_button.setText(QCoreApplication.translate("MainWindow", u"\ud6c4\uc9c4", None))
         self.back_button.setText(QCoreApplication.translate("MainWindow", u"Back", None))
     # retranslateUi
 

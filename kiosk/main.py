@@ -38,8 +38,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # cam mirror
         # Check if video capture is successful
         self.back_button.clicked.connect(self.backBtnClicked)
-        self.option_Button.clicked.connect(self.optionBtnClicked)
+        self.option_button.clicked.connect(self.optionBtnClicked)
         self.connect_button.clicked.connect(self.connectBtnClicked)
+        
+        self.LU_button.clicked.connect(self.clicked_LU_btn)
+        self.LD_button.clicked.connect(self.clicked_LD_btn)
+        self.RU_button.clicked.connect(self.clicked_RU_btn)
+        self.RD_button.clicked.connect(self.clicked_RD_btn)
+        self.AU_button.clicked.connect(self.clicked_AU_btn)
+        self.AD_button.clicked.connect(self.clicked_AD_btn)
+        
+        # frame_6 disable
+        self.frame_6.setEnabled(False)
         
         # Set the chunk size, sample format, channels, and rate
         self.chunk = 1024
@@ -68,7 +78,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer.start(30)  # Fetch frame every 30ms
         
         # Load and add menu images to grid layout
-        self.menu_image_paths = ["./img/001.jpg", "./img/002.jpg", "./img/003.jpg"]
+        self.menu_image_paths = ["./img/001.png", "./img/002.png", "./img/003.png"]
         for index, img_path in enumerate(self.menu_image_paths):
             pixmap = QPixmap(img_path)
             
@@ -99,6 +109,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def update_frame(self):
         ret, frame = self.cap.read()
         if ret:
+            
             # Convert the frame to RGB format
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             # flip image
@@ -140,11 +151,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     
     def connectBtnClicked(self):
         global arduino
-        arduino = serial.Serial(self.serial_port_combobox.currentText(), 9600)
+        arduino = serial.Serial(self.comboBox.currentText(), 9600)
         arduino.flush()
+        # frame_6 enable
+        self.frame_6.setEnabled(True)
         # 연결되면 버튼 비활성화
         self.connect_button.setEnabled(False)
-        self.combobox.setEnabled(False)
+        self.comboBox.setEnabled(False)
         # 연결됨으로 커넥트 버튼 텍스트 변경
         self.connect_button.setText("연결됨")
 
@@ -175,7 +188,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # 중복 단어 제거
         # parsed_words = list(set(parsed_words)) 
         
-        menu_dict = {"마이쮸": "./img/001.jpg", "ABC 초콜릿": "./img/002.jpg", '아이스 아메리카노' :"./img/003.jpg"}
+        menu_dict = {"마이쮸": "./img/001.png", "ABC 초콜릿": "./img/002.png", '아이스 아메리카노' :"./img/003.png"}
         menu_order = []
         
         # for word in parsed_words:
@@ -206,6 +219,30 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         order_text = order_text[:-2]  # 마지막 ", " 제거
         self.ment_label.setText(f"주문하신 메뉴는 '{order_text}'입니다. 주문을 진행하시겠습니까?")
         self.ment_label.adjustSize()
+        
+    def clicked_LU_btn(self):
+        arduino.write(b'7')
+        print("LU")
+    
+    def clicked_LD_btn(self):
+        arduino.write(b'1')
+        print("LD")
+        
+    def clicked_RU_btn(self):
+        arduino.write(b'8')
+        print("RU")
+        
+    def clicked_RD_btn(self):
+        arduino.write(b'2')
+        print("RD")
+    
+    def clicked_AU_btn(self):
+        arduino.write(b'9')
+        print("AU")
+    
+    def clicked_AD_btn(self):
+        arduino.write(b'3')
+        print("AD")
         
     def closeEvent(self, event) -> None:
         self.cap.release()
