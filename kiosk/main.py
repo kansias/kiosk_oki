@@ -1,4 +1,5 @@
 import sys
+import typing
 sys.path.append('kiosk')
 
 from math import e
@@ -78,6 +79,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.menu_image_paths = ["./kiosk/img/001.png", "./kiosk/img/002.png", "./kiosk/img/003.png"]
         self.add_widgets(self.gridLayout, self.menu_image_paths)
         
+        self.new_window = NewWindow()
+        self.new_window.show()
+        
     def add_widgets(self, gridLayout, menu_image_paths, scale1=200, scale2=300, scale3=250):
         # Load and add menu images to grid layout
         for index, img_path in enumerate(menu_image_paths):
@@ -134,7 +138,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.status = 'order'
                     self.ment_label.setText("주문하실 메뉴를 말씀해주세요 (인식중)")
                     self.ment_label.adjustSize()
-
+                    self.delete_all_widgets(self.gridLayout_2)  # 주문내역 위젯에 있는 모든 이미지 삭제
+                    
                     self.thread_start_recording.start()
                     QTimer.singleShot(5000, self.transcribe_audio)
                     
@@ -142,6 +147,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.status = 'order'
                     self.ment_label.setText("주문하신 메뉴가 없습니다. 다시 주문해주세요 (인식중)")
                     self.ment_label.adjustSize()
+                    self.delete_all_widgets(self.gridLayout_2)  # 주문내역 위젯에 있는 모든 이미지 삭제
                     
                     self.thread_start_recording.start()
                     QTimer.singleShot(5000, self.transcribe_audio)
@@ -210,6 +216,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # 결제 하시겠습니까? -> '네' 라는 응답 시
             if pay:
                 self.final_order.append(self.menu_order)  # 최종 주문 내역에 추가
+                self.new_window.set_menu_list(self.final_order)
             
             # 결제 하시겠습니까? -> 응답이 없거나 '아니요'라는 응답 시
             else:
@@ -219,7 +226,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.timer.singleShot(5000, self.initialize_status)
             
     def parse_menu(self, transcript):
-        self.delete_all_widgets(self.gridLayout_2)  # 주문내역 위젯에 있는 모든 이미지 삭제
         menu_order = []
         
         if ("마이" in transcript and "쮸" in transcript) or ("말쭈" in transcript):
@@ -319,6 +325,32 @@ class thread_transcribe_audio(QThread):
         self.text = transcript.text
         self.signal.emit(self.text)
         print('transcribe:', self.text)
+
+class NewWindow(QMainWindow):
+    def __init__(self) -> None:
+        super().__init__()
+        
+        # 주문 내역 출력할 텍스트 에디터
+        from PySide2.QtWidgets import QTextEdit
+        self.text_label = QLabel()
+        self.text_edit = QTextEdit()
+        self.setCentralWidget(self.text_edit)
+        
+        # 주문 내역 출력
+        self.text_label.setText("주문 내역")
+        self.text_label.adjustSize()
+        
+    def set_menu_list(self, order_menus):
+        menu_text = ''
+        for n, menus in enumerate(order_menus, start=1):
+            menu_text += f'주문번호 {n}. \n'
+            for menu in menus:
+                menu_text += f'{menu}\n'
+            menu_text += '\n'
+                
+        self.text_edit.setText(menu_text)
+        
+        
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)
