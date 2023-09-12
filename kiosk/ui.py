@@ -16,7 +16,7 @@ from PySide2.QtWidgets import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
+            MainWindow.setObjectName(u"오키")
         MainWindow.resize(1334, 707)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -212,8 +212,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.ment_label = QLabel(self.ment_frame)
         self.ment_label.setObjectName(u"ment_label")
-        self.ment_label.setMinimumSize(QSize(0, 50))
-        self.ment_label.setMaximumSize(QSize(16777215, 50))
+        self.ment_label.setMinimumSize(QSize(0, 120))
+        self.ment_label.setMaximumSize(QSize(16777215, 150))
         font3 = QFont()
         font3.setFamily(u"\ud568\ucd08\ub86c\ub3cb\uc6c0")
         font3.setPointSize(16)
@@ -547,7 +547,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"오키", None))
         self.option_button.setText("")
         self.top_label1.setText(QCoreApplication.translate("MainWindow", u"Smart Kiosk", None))
         self.top_label2.setText(QCoreApplication.translate("MainWindow", u"\uc624\ud0a4", None))

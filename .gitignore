@@ -12,4 +12,5 @@ kiosk/main_with_menu_images.py
 kiosk/pyvenv.cfg
 kiosk/ui2.py
 kiosk/kiosk.py
-
+kiosk/build
+kiosk/dist
